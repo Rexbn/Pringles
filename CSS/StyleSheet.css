@@ -1,0 +1,83 @@
+﻿
+
+body {
+    font-family:sans-serif;
+    margin:0;
+   
+
+}
+
+/* Desktop version*/
+#Grid_Wrapper div{
+    font-size:5em;
+    color:#000;
+    text-align:center;
+    width:1150px;
+    margin:0 auto;
+    
+}
+
+/*************   Grids  *****************/
+
+#Grid_Wrapper {
+    display:grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header"
+        "header header header"
+        "header header header"
+        "a a a"
+        "a a a"
+        "b b b"
+        "c c c";
+}
+
+/*******   Indhold i grids  ***********/
+
+#Grid_Wrapper div:nth-child(1){
+    grid-area:header;
+    position:relative;
+    
+}
+
+
+#Grid_Wrapper div:nth-child(2){
+    background-color:blue;
+    grid-area:a;
+    position:relative;
+}
+
+#Grid_Wrapper div:nth-child(3){
+    background-color:pink;
+    grid-area:b;
+    position:relative;
+}
+
+#Grid_Wrapper div:nth-child(4){
+    background-color:yellow;
+    grid-area:c;
+    position:relative;
+}
+
+/******** Header styles **************/
+
+#Grid_Wrapper div:nth-child(1) img{
+    width:100%;
+}
+
+#Code_check{
+    background-color:#000;
+    border:none;
+    color:#fff;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    cursor:pointer;
+    height:1.9em;
+    width:8em;
+    font-size:0.5em;
+    position:absolute;
+    bottom:15%;
+    right:10%;
+}

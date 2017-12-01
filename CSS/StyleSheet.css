@@ -1,83 +1,300 @@
 ﻿
+/* Mobil version */
 
 body {
-    font-family:sans-serif;
-    margin:0;
-   
-
+    font-family: sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: auto;
+    text-align: center;
 }
 
-/* Desktop version*/
-#Grid_Wrapper div{
-    font-size:5em;
-    color:#000;
-    text-align:center;
-    width:1150px;
-    margin:0 auto;
-    
+/** Knap **/
+
+#Code_check {
+    background-color: #772458;
+    border-radius: 25px;
+    padding: 0.3em;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 9%;
+    left: 31%;
 }
 
-/*************   Grids  *****************/
+    #Code_check:hover {
+        background-color: #4e1536;
+    }
 
-#Grid_Wrapper {
-    display:grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-        "header header header"
-        "header header header"
-        "header header header"
-        "a a a"
-        "a a a"
-        "b b b"
-        "c c c";
-}
-
-/*******   Indhold i grids  ***********/
-
-#Grid_Wrapper div:nth-child(1){
-    grid-area:header;
-    position:relative;
-    
+header {
+    grid-area: a;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../Pictures/tablet/wantedtablet.jpg');
+    height: 400px;
 }
 
 
-#Grid_Wrapper div:nth-child(2){
-    background-color:blue;
-    grid-area:a;
-    position:relative;
+#Winhead {
+    grid-area: b;
+    background-image: url('../Pictures/tablet/wintablet2.jpg');
 }
-
-#Grid_Wrapper div:nth-child(3){
-    background-color:pink;
-    grid-area:b;
-    position:relative;
-}
-
-#Grid_Wrapper div:nth-child(4){
-    background-color:yellow;
-    grid-area:c;
-    position:relative;
-}
-
-/******** Header styles **************/
-
-#Grid_Wrapper div:nth-child(1) img{
-    width:100%;
-}
-
-#Code_check{
-    background-color:#000;
-    border:none;
+#Variant {
+    background-color: #fe0002;
     color:#fff;
+    grid-area:v;
+    height:auto;
+    padding:1em;
+    font-size:1.7em;
+    font-weight:700;
     text-align:center;
-    text-decoration:none;
-    display:inline-block;
-    cursor:pointer;
-    height:1.9em;
-    width:8em;
-    font-size:0.5em;
-    position:absolute;
-    bottom:15%;
-    right:10%;
+}
+#Variant p{
+    margin:0;
+}
+#OriginalChips {
+    grid-area: c;
+    background-image: url('../Pictures/mobile/original2.jpg');
+}
+
+#SourCreamChips {
+    grid-area: d;
+    background-image: url('../Pictures/mobile/sourcream2.jpg');
+}
+
+#KetchupChips {
+    grid-area: e;
+    background-image: url('../Pictures/mobile/ketchup2.jpg');
+}
+
+#HotnSpicyChips {
+    grid-area: f;
+    background-image: url('../Pictures/mobile/hotnspicy2.jpg');
+}
+
+#Winhead, #OriginalChips, #SourCreamChips, #KetchupChips, #HotnSpicyChips {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+}
+
+footer {
+    grid-area: g;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: #fe0002;
+    height: 200px;
+    background-size: cover;
+    margin-top: -15px;
+}
+
+    footer p {
+        padding: 0.8em;
+        font-size: 1.2em;
+        padding-top: 4%;
+        width: auto;
+        color: white;
+    }
+
+/* Break point fra mobile til tablet. -> Max-width sørger for at de regler der er skrevet i denne media screen, 
+    ikke følger med hen til den næste media screen regl.
+*/
+
+@media screen and (min-width: 500px) and (max-width:800px) {
+    #pagewrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "a a" "b b" "v v" "c d" "e f" "g g";
+    }
+
+    body {
+        font-size: 1.2em;
+    }
+
+    /** Knap **/
+
+    #Code_check {
+        background-color: #772458;
+        padding: 0.3em;
+        border-radius: 25px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1.6em;
+        position: absolute;
+        bottom: 2%;
+        left: 31%;
+    }
+    #Code_check:hover{
+        background-color:#4e1536;
+    }
+
+     #Variant {
+        background-color: #fe0002;
+        color: #fff;
+        grid-area: v;
+        padding: 1em;
+        font-size: 1.7em;
+        margin-top: -88px;
+        text-align: center;
+    }
+
+        #Variant p {
+            margin: 0;
+
+        }
+
+    /***    Ændring af billed efter skærmstørrelse tablet  ***/
+
+    #OriginalChips, #SourCreamChips, #KetchupChips, #HotnSpicyChips {
+        background-repeat: no-repeat;
+        width:440px;
+        height:272px;
+      
+    }
+
+    header {
+        background-image: url('../Pictures/Desktop/wanted.jpg');
+        background-repeat: no-repeat;
+    }
+
+    #Winhead {
+        background-image: url('../Pictures/tablet/wintablet.jpg');
+        width: 100%;
+        background-position: center;
+        height: 78%;
+    }
+
+    #OriginalChips {
+        background-image: url('../Pictures/tablet/originaltablet2.jpg');
+    }
+
+    #SourCreamChips {
+        background-image: url('../Pictures/tablet/sourcreamtablet2.jpg');
+    }
+
+    #KetchupChips {
+        background-image: url('../Pictures/tablet/ketchuptablet2.jpg');
+    }
+
+    #HotnSpicyChips {
+        background-image: url('../Pictures/tablet/hotnspicytablet2.jpg');
+    }
+
+
+    /***    Footer  ***/
+    footer {
+        margin-top: -7px;
+    }
+
+        footer p {
+            width: auto;
+            font-size: 1em;
+            padding-top:8%;
+        }
+}
+
+/* Break point fra tablet til desktop..*/
+
+@media screen and (min-width: 800px) {
+    #pagewrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1.5fr 1fr 0.5fr 1fr 1fr 1fr;
+        grid-template-areas: "a a" "b b" "v v" "c c" "d d" "e e" "f f" "g g" "h h";
+    }
+
+    body {
+        font-size: 1em;
+    }
+
+    /** Knap **/
+
+    #Code_check {
+        background-color: #772458;
+        padding: 0.3em;
+        border-radius: 25px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 3.2em;
+        position: absolute;
+        bottom: -68%;
+        left: 27%;
+    }
+        #Code_check:hover {
+            background-color: #4e1536;
+        }
+
+        /** Styling af Header og Konkurrence **/
+
+    header {
+        background-image: url('../Pictures/Desktop/wanted2.jpg');
+        background-repeat: no-repeat;
+        height:auto;
+        width:100%;
+    }
+    #Winhead {
+        background-image: url('../Pictures/Desktop/win.jpg');
+        background-repeat:no-repeat;
+        background-position:center;
+        height:500px;
+        width:100%;
+    }
+
+    #Variant {
+     height:auto;
+    }
+
+        #Variant p {
+            margin: 0;
+            font-size:3em;
+            padding-top:48px;
+        }
+
+    /*** Variation styles ***/
+    #OriginalChips, #SourCreamChips, #KetchupChips, #HotnSpicyChips, #Winhead {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        filter:grayscale(70%);
+    }
+
+    #OriginalChips {
+        background-image: url('../Pictures/Desktop/original.jpg');
+      
+    }
+
+    #SourCreamChips {
+        background-image: url('../Pictures/Desktop/sourcream.jpg');
+      
+    }
+
+    #KetchupChips {
+        background-image: url('../Pictures/Desktop/ketchup.jpg');
+       
+    }
+
+    #HotnSpicyChips {
+        background-image: url('../Pictures/Desktop/hotnspicy.jpg');
+        
+    }
+
+        #OriginalChips:hover, #SourCreamChips:hover, #KetchupChips:hover, #HotnSpicyChips:hover, #Winhead:hover {
+            filter:grayscale(0%);
+            transition: .5s ease;
+        }
+
+    footer {
+        margin-top: -7px;
+        color: #fff;
+        font-size:1.2em;
+    }
 }
